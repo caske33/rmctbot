@@ -116,7 +116,7 @@ class Bot:
 			for name in files:
 				if name.endswith('.py') and not name.startswith('__'):
 					path = os.path.relpath(os.path.join(root, name))
-					mname = path[:-3].replace('/', '.')
+					mname = path[:-3].replace('/', '.').replace('\\', '.')
 
 					mod = __import__(mname).__dict__
 					for v in mname.split('.')[1:]:
